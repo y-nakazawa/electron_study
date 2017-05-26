@@ -6,6 +6,8 @@ import Signup from "./Signup";
 import Rooms from "./Rooms";
 import Room from "./Room";
 
+import firebase from "firebase/firebase-browser";
+
 const appRouting = (
     <Router history={hashHistory}>
         <Route path="/">
@@ -21,5 +23,16 @@ const appRouting = (
 if (!location.hash.length) {
     location.hash = "#/login";
 }
+
+// Firebaseの初期化
+var config = {
+    apiKey: "AIzaSyDRTMqLMTVmHA-94FeNZYFelWBfPn4K8M4",
+    authDomain: "electron-chat-c8624.firebaseapp.com",
+    databaseURL: "https://electron-chat-c8624.firebaseio.com",
+    projectId: "electron-chat-c8624",
+    storageBucket: "electron-chat-c8624.appspot.com",
+    messagingSenderId: "1008268547483"
+};
+firebase.initializeApp(config);
 
 render(appRouting, document.getElementById("app"));
