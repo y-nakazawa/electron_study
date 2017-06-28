@@ -7,6 +7,7 @@ import Rooms from "./Rooms";
 import Room from "./Room";
 
 import firebase from "firebase/firebase-browser";
+//import firebase from "firebase";
 
 const appRouting = (
     <Router history={hashHistory}>
@@ -33,6 +34,7 @@ var config = {
     storageBucket: "electron-chat-c8624.appspot.com",
     messagingSenderId: "1008268547483"
 };
-firebase.initializeApp(config);
+var db = firebase.initializeApp(config);
+//db.databese();
 
 render(appRouting, document.getElementById("app"));
